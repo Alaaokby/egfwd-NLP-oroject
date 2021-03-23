@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Sentiment Analyzer</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="container">
+                <h1 class="lead my-5 text-center">Enter a URL of an article / a blog to discover its sentiment.</h1>
+                <section>
+                    <form id="form">
+                        <label for="basic-url" class="form-label">Your Article URL</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" />
+                        </div>
+                        <button type="submit" class="btn-submit btn btn-primary">Submit</button>
+                    </form>
+                </section>
+
+                <section class="mt-3">
+                    <strong>Form Results:</strong>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div>Text: <span id="text"></span></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>Agreement: <span id="agreement"></span></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>Subjectivity: <span id="subjectivity"></span></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>confidence <span id="confidence"></span></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>irony: <span id="irony"></span></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>score_tag: <span id="score_tag"></span></div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                })
+            }
+        </script>
+    </body>
+</html>
