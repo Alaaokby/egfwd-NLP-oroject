@@ -11,7 +11,8 @@ const PORT = 8081
 app.use(cors())
 
 app.use(express.json())
-app.use(express.static((root: 'dist')))
+app.use(express.static('../../dist'))
+
 const BASE_API_URL = 'https://api.meaningcloud.com/sentiment-2.1'
 
 app.get('/', function (req, res) {
