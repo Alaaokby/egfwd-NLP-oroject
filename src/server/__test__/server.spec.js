@@ -7,7 +7,7 @@ describe('Server Test', () => {
         request(app)
             .get('/okby')
             .then((response) => {
-                expect(response.statusCode).toBe((expected: 404))
+                expect(response.statusCode).toBe(404)
                 done()
             })
     })
